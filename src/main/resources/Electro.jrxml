@@ -22,10 +22,6 @@
 					</textElement>
 					<text><![CDATA[CYBER ELECTRONIC]]></text>
 				</staticText>
-				<image>
-					<reportElement x="10" y="10" width="100" height="60" uuid="d49357e6-f49c-4b9b-a078-1cc4f8b186d7"/>
-					<imageExpression><![CDATA["D:/Extra Extra/AlgoritmiaCICLO_1 y 2/imagen_LP/iconoProyectoResolucion.png"]]></imageExpression>
-				</image>
 			</frame>
 		</band>
 	</title>
@@ -41,10 +37,6 @@
 				</textElement>
 				<text><![CDATA[Reporte Electrodomesticos]]></text>
 			</staticText>
-			<image>
-				<reportElement x="280" y="8" width="40" height="30" uuid="31954cd6-f704-498d-9cf6-ba29a4456c6d"/>
-				<imageExpression><![CDATA["D:/Extra Extra/AlgoritmiaCICLO_1 y 2/Iconos_LP/copy_selected.png"]]></imageExpression>
-			</image>
 		</band>
 	</pageHeader>
 	<columnHeader>
