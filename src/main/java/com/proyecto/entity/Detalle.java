@@ -4,6 +4,7 @@ public class Detalle {
 	
 	public int codigo,cantidad;
 	public String descripcion,nomAr;
+	public double precio,importe;
 	
 	
     public String getNomAr() {
@@ -12,7 +13,6 @@ public class Detalle {
 	public void setNomAr(String nomAr) {
 		this.nomAr = nomAr;
 	}
-	public double precio,importe;
     
 	public int getCodigo() {
 		return codigo;
