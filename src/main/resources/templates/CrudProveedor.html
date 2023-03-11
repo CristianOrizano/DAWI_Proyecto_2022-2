@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Dashboard">
+	<meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    
+  <!-- Bootstrap CSS -->
+  
+	<meta charset="ISO-8859-1">
+	<title>crud cliente</title>
+	  <link th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{/resources/css/dataTables.bootstrap5.min.css}" rel="stylesheet">  
+	<link th:href="@{/resources/datepicker/bootstrap-datepicker.css}" rel="stylesheet">
+	<link th:href="@{/resources/css/bootstrap-icons.css}" rel="stylesheet">
+	
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" th:href="@{/resources/alertifyjs/css/alertify.css}">
+	<link rel="stylesheet" th:href="@{/resources/alertifyjs/css/alertify.min.css}"> 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+	
+	<!-- Bootstrap core CSS -->
+	<font-awesome-icon icon="fa-sharp fa-solid fa-house-chimney-window" />
+	<!--external css-->
+	<link rel="stylesheet" type="text/css" th:href="@{/resources/assets/font-awesome/css/font-awesome.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/resources/assets/js/bootstrap-datepicker/css/datepicker.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/resources/assets/js/bootstrap-daterangepicker/daterangepicker.css}">
+		
+	
+		
+	<!-- Custom styles for this template -->
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/resources/assets/css/style.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/resources/assets/css/style-responsive.css}">
+
+
+
+    
+    
+    <style type="text/css">
+    
+    	.modal-header{
+		color:#fff;
+		background: #428bca;
+		display: flex;
+  		justify-content: center;  		
+		}
+		.help-block {
+		  		color: red;
+		}
+		.form-group.has-error .form-control-label {
+		  color: red;
+		}
+		.form-group.has-error .form-control {
+		  border: 1px solid red;
+		  box-shadow: 0 0 0 0.2rem rgba(250, 16, 0, 0.18);
+		}
+		.alertify .ajs-dialog {
+		    top: 50%;
+		    transform: translateY(-50%);
+		    margin: auto;
+		}
+		.ajs-header{
+			background-color: #286090 !important;
+			color: white !important;
+			/*text-align: center;*/
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.ajs-ok{
+			color: #fff;
+		    background-color: #007bff;
+		    border-color: #007bff;
+		}
+		.ajs-cancel{
+			color: #fff;
+		    background-color: #dc3545;
+		    border-color: #dc3545;
+		}
+       	.form-control{
+       		font-size: 15px;
+       	}
+       	.form-select{
+       		font-size: 15px;
+       	}
+       	.img2 {
+	height: 280px;
+	margin-left: 50px;
+}
+.btn{
+	font-size: 15px;
+}
+
+.a {
+	float: left;
+	background: #E93737;
+	padding: 5px;
+	height: 48px;
+	width: 550px;
+	color: #20C9EB;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 25px;
+	font-family: 'Fjalla One', sans-serif;
+	border:solid white;
+}
+
+.usu {
+	float: right;
+	height: 75px;
+	width: 650px;
+	padding: 10px;
+	
+}
+
+.b {
+	background: #1E89D3;
+	float: left;
+	border-radius: 10px;
+}
+
+
+
+.strongnav {
+	font-size: 25px;
+	color: white;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+       body{
+	background: #C33764;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+       }
+       #formDocente{
+	background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+    label{
+	color: white;
+}
+       
+       </style>
+</head>
+
+<body>
+
+	<section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header " style="background: #212F3C;">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>CYBER ELEC</b></a>
+            <!--logo end-->
+        
+            <div class="top-menu">
+            	<div class="usu">
+				
+				<p class="a">
+					<strong> Bienvenido: </strong> 
+						<strong class="strongnav" th:text="${session.Nombre}">
+						</strong>
+				</p>
+			</div>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar" style="background: #212F3C;"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              		<h5 class="centered" style="background: #2980B9;padding: 10px;" th:text="${session.ROL}"></h5>
+              	  	
+                  <li class="mt">
+                      <a  th:href="@{/electro/principal}" >
+                  <i class="fa fa-sharp fa-solid fa-user"></i>
+                          <span>Inicio</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu" th:each="bean:${session.ENLACES}" >
+						<a th:text="${bean.descripcion}" th:href="${bean.ruta}">						
+						</a>				
+					</li>
+                  
+                  
+	<form th:action="@{/logout}" method="post">
+					<li class="sub-menu">
+						<a class="" href="javascript:;">
+							<i class="fa fa-sharp fa-solid fa-power-off"></i>								
+							<span> <button type="submit" class="btn btn-warning">Cerrar</button></span>										
+						</a>
+
+					</li>
+						</form>
+                  
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+         
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+
+      <section id="main-content">
+          <section class="wrapper"  style="margin-top: 30px;padding: 50px">   	
+			
+			<br><br>
+          	<!-- BASIC FORM ELELEMNTS -->
+          <div style="background: #F0F3F4;padding: 20px;">	
+		<h3 class="text-center" style="color: #FD4E4E;"> Mantenimiento Proveedores</h3>	  
+	  	<!-- Modal PARA REGISTRAR-->
+		<div class="modal fade" id="modalMedicamento" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered modal-lg">
+		    <div class="modal-content">
+		    
+		      <div class="modal-header" style="background-color:#F99A41">
+		        <h5 >Cliente</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      
+		      
+		      <div class="modal-body">
+		                                      <!--1.llamamos al controler 2.al metdo -->
+				<form id="formDocente" action="/proveedor/grabar" method="post" class="row g-3">
+				
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label for="validationCustomUsername" class="form-label fw-bold">Código</label>
+						<div class="input-group has-validation">
+							<span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-file-person"></i></span>
+							<input type="text" class="form-control" name="codigo" id="idCodigo" readonly value="0">
+						</div>
+					</div>
+					</div>
+					
+				
+					<div class="form-group col-6">
+						<label for="validationCustomUsername" class="form-label fw-bold">Nombre</label>
+						<div class="input-group has-validation">
+							
+							<input type="text" class="form-control" name="nombre" id="idNombre">
+						</div>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="validationCustomUsername" class="form-label fw-bold">Apellido</label>
+						<div class="input-group has-validation">
+							
+							<input type="text"   class="form-control" name="apellido" id="idApellido">
+						</div>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="validationCustomUsername" class="form-label fw-bold">DNI</label>
+						<div class="input-group has-validation">
+							
+							<input type="number"  class="form-control" name="dni" id="idDni">
+						</div>
+					</div>
+					
+					<div class="form-group col-md-4">
+						<label for="validationCustomUsername" class="form-label fw-bold">Direccion</label>
+						<div class="input-group has-validation">
+							
+							<input type="text"   class="form-control" name="direccion" id="idDireccion">
+						</div>
+					</div>
+						<div class="form-group col-md-4">
+						<label for="validationCustomUsername" class="form-label fw-bold">Telefono</label>
+						<div class="input-group has-validation">
+							
+							<input type="number"  class="form-control" name="fono" id="idFono">
+						</div>
+					</div>
+				
+				
+				
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-primary"><i class="bi bi-save2"></i> Grabar</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i>
+							Cerrar</button>
+					</div>
+				</form>
+		      </div>
+		      
+		    </div>
+		  </div>
+		</div>
+	    <!--fin modal PARA REGISTRAR-->
+
+	    <div >
+	    <table id="tableDocente" class="table table-dark table-striped" style="width:100%">
+        <thead>
+							   <tr>
+					                <th>Código</th>
+					                <th>Nombre</th>
+					                <th>Apellido</th>
+					                <th>Dni</th>
+					                <th>Direccion</th>
+					                <th>Telefono</th>					           
+					                <th></th>
+					               
+					            </tr>
+							  </thead>
+							  <tbody>
+								<tr th:each="row:${lista}">
+							      <td th:text="${row.codigo}"></td>
+							      <td th:text="${row.nombre}"></td>
+							      <td th:text="${row.apellido}"></td>
+							      <td th:text="${row.dni}"></td>
+							      <td th:text="${row.direccion}"></td>
+							      <td th:text="${row.fono}"></td>
+							      <td><a class="btn btn-info btn-editar" data-bs-toggle="modal" data-bs-target="#modalMedicamento">
+							      <i class="bi bi-pencil">editar</i></a>
+							    <a class="btn btn-danger btn-eliminar"><i class="bi bi-trash-fill">eliminar</i></a></td>
+							    </tr>  
+							  </tbody>
+    </table>
+	</div>    
+	     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMedicamento">
+	  		Nuevo Cliente
+	  	</button>
+	</div>
+          
+		</section>  <! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
+
+
+
+      <!--main content end-->
+      <!--footer start-->
+      
+      <!--footer end-->
+  </section>
+  
+ 	<!-- js placed at the end of the document so the pages load faster -->
+
+	<script th:src="@{/resources/assets/js/jquery.js}"></script>
+	<script th:src="@{/resources/assets/js/bootstrap.min.js}"></script>
+	<script class="include" type="text/javascript"th:src="@{/resources/assets/js/jquery.dcjqaccordion.2.7.js}"></script>
+	<script th:src="@{/resources/assets/js/jquery.scrollTo.min.js}"></script>
+	<script th:src="@{/resources/assets/js/jquery.nicescroll.js}"></script>
+
+	<!--common script for all pages-->
+	<script th:src="@{/resources/assets/js/common-scripts.js}"></script>
+	<!--script for this page-->
+	<script th:src="@{/resources/assets/js/jquery-ui-1.9.2.custom.min.js}"></script>
+	<!--custom switch-->
+	<script th:src="@{/resources/assets/js/bootstrap-switch.js}"></script>
+	<!--custom tagsinput-->
+	<script th:src="@{/resources/assets/js/jquery.tagsinput.js}"></script>
+	<!--custom checkbox & radio-->
+	
+	
+	<script th:src="@{/resources/assets/js/form-component.js}"></script>
+
+	<script>
+		//custom select box
+
+		$(function () {
+			$('select.styled').customSelect();
+		});
+
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	
+	
+	
+	
+	
+	<!-- JS principal -->
+	<script th:src="@{/resources/js/jquery-3.5.1.js}"></script>
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+    <script th:src="@{/resources/js/bootstrap.bundle.min.js}"></script>
+
+	<!-- JS para la tabla -->
+	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+	<!--JS para validar  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.0/js/bootstrapValidator.js"></script>
+	
+	<!--JS para Calendario  -->
+	<script th:src="@{/resources/datepicker/bootstrap-datepicker.js}"></script> 
+	
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	
+	<script th:src="@{/resources/alertifyjs/alertify.js}"></script>
+	<script th:src="@{/resources/alertifyjs/alertify.min.js}"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	
+	
+	<!--este script es una etiquete de javascript
+	por eso lo manipulo  -->
+	<script th:inline="javascript" th:if="${MENSAJE!=null}">
+	 let msj
+        msj= /*[[${MENSAJE}]]*/
+		window.swal("Correcto!", msj, "success");
+	</script>
+	
+	
+	<script>
+	
+	
+	
+
+		
+		
+		//asignar evento clik atodos los botones con nombre de clase
+		//btn-editar 
+		$(document).on("click",".btn-editar",function(){
+			//leer la columna codigo de la fila actual seg-un el boton que se hizo clik 
+			let cod;
+			//$(this) ==>es el botn que pulsamos
+			//parents("tr") ==>se encuentra dentro deuna fila
+			//find("td")[0] ==> la primera columna
+			//innerHTML ==> sacar copia de lo que se encuentra en esa columna
+			cod=$(this).parents("tr").find("td")[0].innerHTML;
+			//get
+			//esa ruta buscar devuelve un json
+			//lo estamos guardando en parametro response
+			$.get("buscar?codigo="+cod,function(response){
+				console.log(response);
+				$("#idCodigo").val(response.codigo);
+				$("#idFono").val(response.fono);
+				$("#idNombre").val(response.nombre);
+				$("#idApellido").val(response.apellido);
+				$("#idDni").val(response.dni);		
+				$("#idDireccion").val(response.direccion);			
+				
+			})	
+		})
+		
+		  $(document).on("click",".btn-eliminar",function(){
+			   let cod;
+			//$(this) ==>es el botn que pulsamos
+			//parents("tr") ==>se encuentra dentro deuna fila
+			//find("td")[0] ==> la primera columna
+			//innerHTML ==> sacar copia de lo que se encuentra en esa columna
+			cod=$(this).parents("tr").find("td")[0].innerHTML;
+			  alertify.confirm("SISTEMA", "Seguro de eliminar!",
+				  function () {
+					//estto es si elimina
+                     window.location="eliminar?codigo="+cod;
+				  },
+				  function () {
+					//esto es si no
+					  alertify.error('Cancelado!');
+				  });
+								
+			})	
+			
+			
+
+		
+		
+		
+		
+		
+	</script>
+	
+	
+
+	<script>
+		$(document).ready(function () {
+		    $('#tableDocente').DataTable();
+		    //validación
+		    $('#formDocente').bootstrapValidator({      
+	        	 fields:{
+	        		 	marca:{
+	        		 		validators:{
+	        		 			notEmpty:{
+	        		 				message:'Campo marca es obligatorio'
+	        		 			}
+	        		 		}
+	        		 	},
+	        		 	descripcion:{
+	        		 		validators:{
+	        		 			notEmpty:{
+	        		 				message:'Campo descripción es obligatorio'
+	        		 			}
+	        		 		}
+	        		 	},
+	        		 	stock:{
+	        		 		validators:{
+	        		 			notEmpty:{
+	        		 				message:'Campo stock es obligatorio'
+	        		 			}
+	        		 		}
+	        		 	},
+	        		 	precio:{
+	        		 		validators:{
+	        		 			notEmpty:{
+	        		 				message:'Campo precio es obligatorio'
+	        		 			}
+	        		 		}
+	        		 	},
+	        		 
+	        		 	categoria: {
+		     	    		validators:{
+	        		 			notEmpty:{
+	        		 				message:'Campo categoria es obligatorio'
+	        		 			}
+	        		 		}
+		                },empresa: {
+		     	    		validators:{
+	        		 			notEmpty:{
+	        		 				message:'Campo empresa es obligatorio'
+	        		 			}
+	        		 		}
+		                },
+		    
+		    
+	        	 }
+	        })
+	        $('#usr1').on('changeDate', function(e) {	
+				$('#formDocente').data('bootstrapValidator').updateStatus('fecha', 'VALIDATED');
+			})
+		    $('#modalMedicamento')
+	        .on('hidden.bs.modal',function(){
+				$("#formDocente").bootstrapValidator('resetForm',true);
+				$("#idCodigo").val(0)
+			})
+		    
+		});
+	</script>
+
+</body>
+
+</html>

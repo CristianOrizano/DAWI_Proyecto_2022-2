@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Electro" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6399337d-89cc-4e6d-bb9b-4bc0954ee1b2">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="codigo" class="java.lang.Integer"/>
+	<field name="cantidad" class="java.lang.Integer"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="precio" class="java.lang.Double"/>
+	<background>
+		<band height="72" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="5" y="10" width="545" height="92" forecolor="#1B0F1C" backcolor="#06141C" uuid="e3988608-5b0d-42cd-8b63-c6c4355f150e"/>
+				<staticText>
+					<reportElement x="99" y="22" width="350" height="35" forecolor="#FFFFFF" backcolor="#FAFAFF" uuid="8d75a3af-3fd7-485c-a501-ad145cdb2080"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial Rounded MT Bold" size="25" isBold="false" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[CYBER ELECTRONIC]]></text>
+				</staticText>
+				<image>
+					<reportElement x="10" y="10" width="100" height="60" uuid="d49357e6-f49c-4b9b-a078-1cc4f8b186d7"/>
+					<imageExpression><![CDATA["D:/Extra Extra/AlgoritmiaCICLO_1 y 2/imagen_LP/iconoProyectoResolucion.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="270" height="30" forecolor="#FF0055" backcolor="rgba(13, 255, 0, 0.75686276)" uuid="223bbf04-4f49-4a6c-87ff-a73d0428f10b"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineColor="#ECFA50"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Algerian" size="16" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Reporte Electrodomesticos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="280" y="8" width="40" height="30" uuid="31954cd6-f704-498d-9cf6-ba29a4456c6d"/>
+				<imageExpression><![CDATA["D:/Extra Extra/AlgoritmiaCICLO_1 y 2/Iconos_LP/copy_selected.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="10" width="100" height="30" forecolor="#3298E6" uuid="2b2847fe-d6a2-44ec-a1f8-001c9e4e66fa">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e068c8-ee26-4b46-bbe5-ce19a5e09b52"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="12"/>
+				</textElement>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="10" width="100" height="30" forecolor="#3298E6" uuid="e39302a7-5d7f-4335-97f1-e468d3994e38">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="efdfaaec-78ac-454f-98db-1758107fa4ec"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="12"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="10" width="100" height="30" forecolor="#3298E6" uuid="bf41936b-65fc-4bb1-961a-74dc6091d77a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b3c91f1-e5e0-4a1e-99d7-74d3288d142e"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="12"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="11" width="100" height="30" forecolor="#3298E6" uuid="9669032a-53d3-44b0-8286-79e2d14273bf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="76ee636e-3942-4b7d-aba5-f9c404db8e22"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="12"/>
+				</textElement>
+				<text><![CDATA[PRECIO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="5" y="40" width="529" height="1" uuid="a64bb186-a1fe-49a1-9494-8070fa946a44"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="93" height="30" uuid="f5d9f8c2-19be-4a3a-99ca-281b9dcd21f1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e068c8-ee26-4b46-bbe5-ce19a5e09b52"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="10" width="100" height="30" uuid="b57886c5-be3c-4126-87fa-2c71ae09f7ee">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="efdfaaec-78ac-454f-98db-1758107fa4ec"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="10" width="100" height="30" uuid="65d68a7a-8382-48d8-9487-0fa12140932e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b3c91f1-e5e0-4a1e-99d7-74d3288d142e"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="10" width="100" height="30" uuid="07e15e0d-c850-41b4-bc10-f9218ee3132a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="76ee636e-3942-4b7d-aba5-f9c404db8e22"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
